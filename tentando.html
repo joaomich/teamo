@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>momozyh 💖</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+      color: #800000;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    .timer {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+
+    .mensagem {
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .galeria, .galeria-extra {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .galeria img, .galeria-extra img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover, .galeria-extra img:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      margin: 20px 10px;
+      padding: 10px 20px;
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .historia {
+      background-color: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    iframe {
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Te amo há 💕</h1>
+  <div class="timer" id="contador"></div>
+
+  <div class="mensagem">
+    <h2>Para o meu bebeh 💌</h2>
+    <p>
+      Com você me sinto invencível, me mudou por completo. <br>
+      Eu era só um gaymerzinho que não ligava pra nada, mas por você, todo dia quero ser alguém melhor. <br>
+      Te amo! 💖
+    </p>
+  </div>
+
+  <div class="galeria">
+    <img src="bebeh1.jpg" alt="Foto nossa 1">
+    <img src="bebeh2.jpg" alt="Foto nossa 2">
+    <img src="bebeh3.jpg" alt="Foto nossa 3">
+  </div>
+
+  <button onclick="mostrarMaisFotos()">Ver mais fotos 📸</button>
+  <button onclick="mostrarHistoria()">Nossa História 💌</button>
+  <button onclick="tocarMusica()">Tocar música 🎵</button>
+
+  <div id="maisFotos" class="galeria-extra hidden">
+    <img src="bebeh4.jpg" alt="Foto nossa 4">
+    <img src="bebeh5.jpg" alt="Foto nossa 5">
+    <img src="bebeh7.jpg" alt="Foto nossa 6">
+  </div>
+
+  <div id="historia" class="historia hidden">
+    <h3>COMEÇO CASAL MAIS BABILÔNICO</h3>
+    <p>
+      "Assim com o oceano só é belo com o luar, assim como a canção"<br>
+      "kkkkk tá ai"<br>
+      "ok kkkkkkk" Até eu contar a história das minhas BALLS e tudo mudar!<br>
+      Hoje em dia não vivo mais sem você, já falei várias vezes, mas ainda compensa falar aqui:<br>
+      dia 21 de abril de 2025 fiz a melhor escolha da minha vida!
+    </p>
+  </div>
+
+  <!-- Player YouTube escondido (apenas ao clicar no botão) -->
+  <iframe id="player" width="0" height="0"
+    src=""
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    style="display:none;"></iframe>
+
+  <script>
+    const inicio = new Date("2025-04-21T00:00:00");
+
+    function atualizaContador() {
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("contador").innerHTML =
+        `${dias} dias, ${horas}h ${minutos}min ${segundos}s juntos 💖`;
+    }
+
+    function mostrarMaisFotos() {
+      const div = document.getElementById("maisFotos");
+      div.classList.toggle("hidden");
+    }
+
+    function mostrarHistoria() {
+      const div = document.getElementById("historia");
+      div.classList.toggle("hidden");
+    }
+
+    function tocarMusica() {
+      const iframe = document.getElementById("player");
+      iframe.src = "https://www.youtube.com/embed/uLhTz0WbHlg?autoplay=1&loop=1&playlist=uLhTz0WbHlg";
+    }
+
+    setInterval(atualizaContador, 1000);
+    atualizaContador();
+  </script>
+
+</body>
+</html>
